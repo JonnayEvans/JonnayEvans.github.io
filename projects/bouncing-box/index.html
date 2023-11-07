@@ -2,13 +2,13 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Bouncing Box</title>
+	<title>Bouncing Brown Box</title>
 	<script src="jquery.min.js"></script>
 	<style>
 		.box {
-			width: 70px;
-			height: 70px;
-			background-color: teal;
+			width: 77px;
+			height: 77px;
+			background-color: orange;
 			font-size: 300%;
 			text-align: center;
 			user-select: none;
@@ -19,6 +19,7 @@
 		}
 		.board{
 			height: 100vh;
+			background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6nlEfsCj_62fMJuJCAnlYcqSHO1Bclw0DeA&usqp=CAU)
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -62,6 +63,11 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
+			var positionX = 0;
+			var points = 0;
+			var speed = 10;
+			var positionY = 0;
+			var speedY = 10;
 			
 
 			
@@ -71,6 +77,22 @@
 			turn it around! 
 			*/
 			function update() {
+				/*we want to increase the value of positionX by 9.5*/
+				positionX = positionX + speed
+				moveBoxTo(positionX)
+				if (positionX>boardWidth){
+					speed = speed *-1;
+
+				if (positonX<0)	
+				speed = speed *-1;
+				};
+
+				if (positionY>boardHeight ) {
+					speed = speed * -1;
+
+					if (positionX<0)
+					speed = speed* -1;
+				}
 				
 
 			};
